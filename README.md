@@ -1,77 +1,31 @@
-# 🧠 Forex Chatbot Web App
+# Forex Chatbot - AI Trading Assistant
 
-A modern, AI-powered multilingual chatbot built with Next.js 15 that helps users understand Forex trading concepts, supports onboarding, answers FAQs, and captures leads for trading support.
-
-![ForexBot Demo](https://via.placeholder.com/800x400/3b82f6/ffffff?text=ForexBot+Demo)
+A modern, responsive Forex education and support chatbot built with Next.js 15, OpenAI Assistant API, and shadcn/ui. This multilingual AI assistant helps users learn Forex trading concepts, understand market dynamics, and get guidance on trading-related questions.
 
 ## ✨ Features
 
-### 🤖 AI-Powered Chat
+- **🤖 AI-Powered Assistant**: OpenAI Assistant API for intelligent, context-aware conversations
+- **🌍 Multilingual Support**: Automatic language detection and support for English, Hindi, and Marathi
+- **📱 Fully Responsive**: Modern, mobile-first design that works across all devices
+- **⚡ Real-time Streaming**: Instant response streaming for smooth conversation flow
+- **📚 Educational Focus**: Specialized in Forex trading education, onboarding, and FAQs
+- **🎨 Modern UI**: Clean, minimalistic design with shadcn/ui components
+- **🔧 Topic-Based Chat**: Quick access to common trading topics and questions
 
-- **OpenAI Integration**: Powered by GPT-4o-mini for accurate, context-aware responses
-- **Streaming Responses**: Real-time message streaming for better user experience
-- **Smart Context**: Pre-configured with Forex trading expertise and safety guidelines
+## 🛠️ Tech Stack
 
-### 🌐 Multilingual Support
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **AI Integration**: OpenAI Assistant API
+- **Language**: JavaScript/TypeScript
+- **Deployment**: Vercel-ready
 
-- **English** 🇺🇸: Primary language for global users
-- **Hindi** 🇮🇳: हिंदी में सहायता
-- **Marathi** 🇮🇳: मराठी भाषेत मदत
-
-### 🎯 Core Capabilities
-
-- **Trading Education**: Leverage, pips, currency pairs, risk management
-- **Onboarding Support**: Account creation, KYC processes, platform navigation
-- **Market Insights**: Trends, analysis, economic indicators
-- **Risk Management**: Responsible trading practices and compliance
-- **Lead Capture**: Integrated CRM-ready lead generation system
-
-### 🎨 Modern UI/UX
-
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
-- **Dark/Light Mode**: Automatic theme support via shadcn/ui
-- **Smooth Animations**: Tailwind CSS transitions and effects
-- **Accessible**: WCAG compliant with proper ARIA labels
-
-## 🛠 Tech Stack
-
-| Layer          | Technology                  |
-| -------------- | --------------------------- |
-| **Frontend**   | Next.js 15 (App Router)     |
-| **Styling**    | Tailwind CSS v4 + shadcn/ui |
-| **Language**   | JavaScript (ES2024)         |
-| **AI/Chat**    | OpenAI GPT-4o-mini API      |
-| **Components** | Radix UI + Lucide Icons     |
-| **Deployment** | Vercel Ready                |
-
-## 📁 Project Structure
-
-```
-/src
-  /app
-    /api
-      /chat          → OpenAI chat API route with streaming
-      /leads         → Lead capture API (CRM integration ready)
-    /chat            → Dedicated full-screen chat page
-    globals.css      → Global styles and CSS variables
-    layout.js        → Root layout with metadata
-    page.js          → Enhanced landing page with lead capture
-  /components
-    /ui              → shadcn/ui components (button, input, etc.)
-    ChatInterface.jsx → Main chat component with language switching
-    MessageBubble.jsx → Chat message bubbles with typing indicators
-    LeadCapture.jsx   → Comprehensive lead capture form
-  /lib
-    chatUtils.js     → Chat utilities, sample questions, validation
-    utils.js         → General utilities (cn function, etc.)
-```
-
-## 🚀 Quick Start
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+- Node.js 18+ and npm
 - OpenAI API key
 
 ### Installation
@@ -79,7 +33,7 @@ A modern, AI-powered multilingual chatbot built with Next.js 15 that helps users
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone <repository-url>
    cd forex-chatbot
    ```
 
@@ -87,8 +41,6 @@ A modern, AI-powered multilingual chatbot built with Next.js 15 that helps users
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. **Set up environment variables**
@@ -97,215 +49,152 @@ A modern, AI-powered multilingual chatbot built with Next.js 15 that helps users
    cp .env.local.example .env.local
    ```
 
-   Edit `.env.local`:
+   Edit `.env.local` and add your OpenAI API key:
 
-   ```env
-   # OpenAI API Configuration
+   ```bash
    OPENAI_API_KEY=your_openai_api_key_here
-
-   # Application Configuration
-   NEXT_PUBLIC_APP_NAME=ForexBot
-   NODE_ENV=development
+   # Optional: Set a specific assistant ID
+   OPENAI_ASSISTANT_ID=asst_your_assistant_id_here
    ```
 
 4. **Run the development server**
 
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-5. **Open in browser**
-   ```
-   http://localhost:3000
-   ```
+5. **Open your browser**
+   Visit [http://localhost:3000](http://localhost:3000)
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/
+│   ├── api/
+│   │   └── chat/         # OpenAI Assistant API route
+│   ├── chat/             # Dedicated chat page
+│   ├── globals.css       # Global styles
+│   ├── layout.js         # Root layout
+│   └── page.js           # Landing page
+├── components/
+│   ├── ui/               # shadcn/ui components
+│   ├── ChatInterface.jsx # Main chat component
+│   └── MessageBubble.jsx # Chat message bubble
+└── lib/
+    └── utils.js          # Utility functions
+```
+
+## 🎯 Key Features Explained
+
+### OpenAI Assistant API Integration
+
+The chatbot uses OpenAI's Assistant API instead of simple completions, providing:
+
+- Better token efficiency
+- Improved context management
+- Automatic multilingual support
+- Enhanced conversation flow
+
+### Responsive Chat Interface
+
+- **Mobile-first design**: Optimized for all screen sizes
+- **Proper scrolling**: Fixed overflow issues with smooth scrolling
+- **Auto-resize**: Dynamic height adjustment
+- **Touch-friendly**: Optimized for mobile interactions
+
+### Topic-Based Navigation
+
+- **Quick Topics**: Pre-defined trading topics for easy access
+- **Sample Questions**: Contextual question suggestions
+- **Smart Categorization**: Organized by trading concepts
+
+### Educational Focus
+
+The AI assistant specializes in:
+
+- Forex trading basics (pips, leverage, currency pairs)
+- Account setup and KYC processes
+- Risk management and trading strategies
+- Market analysis and trends
+- Regulatory information (especially for India/SEBI)
+
+## 🌐 Multilingual Support
+
+The chatbot automatically detects and responds in the user's language:
+
+- **English**: Full support for international users
+- **Hindi**: हिंदी में पूर्ण सहायता
+- **Marathi**: मराठीत संपूर्ण सहाय्य
 
 ## 🔧 Configuration
 
-### OpenAI API Setup
+### OpenAI Assistant Setup
 
-1. Sign up at [OpenAI](https://platform.openai.com/)
-2. Create an API key in your dashboard
-3. Add the key to your `.env.local` file
-4. The app uses `gpt-4o-mini` for cost efficiency
+The app automatically creates an OpenAI Assistant with specialized Forex trading instructions. You can also provide your own assistant ID via environment variables.
 
 ### Customization
 
-#### Adding New Languages
+- **Assistant Instructions**: Modify `/src/app/api/chat/route.js` to update AI behavior
+- **Topics**: Edit `/src/app/chat/page.js` to add/modify quick topics
+- **Styling**: Update Tailwind classes or add custom CSS
 
-1. Update `LANGUAGES` object in `ChatInterface.jsx`
-2. Add system prompts in `src/app/api/chat/route.js`
-3. Add welcome messages and sample questions in respective components
+## 📱 Responsive Design
 
-#### Lead Capture Integration
+The application is fully responsive with:
 
-The lead capture system is CRM-ready. To integrate with your CRM:
+- **Mobile**: Optimized chat interface with touch-friendly controls
+- **Tablet**: Balanced layout with topic sidebar
+- **Desktop**: Full-featured experience with side-by-side layout
 
-```javascript
-// In src/app/api/leads/route.js
-// Uncomment and configure webhook integration
-if (process.env.CRM_WEBHOOK_URL) {
-  await fetch(process.env.CRM_WEBHOOK_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(leadData),
-  });
-}
-```
-
-## 🎨 UI Components
-
-### Available shadcn/ui Components
-
-- `button` - Various button styles and sizes
-- `input` - Form inputs with validation states
-- `card` - Content containers
-- `badge` - Status and category labels
-- `avatar` - User profile pictures
-- `scroll-area` - Custom scrollbars
-- `dropdown-menu` - Accessible dropdown menus
-- `separator` - Visual dividers
-
-### Adding New Components
-
-```bash
-npx shadcn@latest add dialog
-npx shadcn@latest add toast
-npx shadcn@latest add table
-```
-
-## 📱 Pages & Routes
-
-### `/` - Landing Page
-
-- Hero section with value proposition
-- Interactive chat interface
-- Feature showcase
-- Lead capture integration
-- Social proof elements
-
-### `/chat` - Dedicated Chat Page
-
-- Full-screen chat experience
-- Quick topic shortcuts
-- Trading tips sidebar
-- Enhanced user engagement
-
-### API Routes
-
-- `/api/chat` - OpenAI chat completion with streaming
-- `/api/leads` - Lead capture with validation
-
-## 🔒 Security & Privacy
-
-### Data Protection
-
-- No user data stored without consent
-- Environment variables for sensitive config
-- API rate limiting ready
-- CORS protection enabled
-
-### OpenAI Safety
-
-- Pre-configured system prompts for safe responses
-- Risk management emphasis in all trading advice
-- Regulatory compliance reminders
-- Professional guidance recommendations
-
-## 🚢 Deployment
+## 🚀 Deployment
 
 ### Vercel (Recommended)
 
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on commits
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically
 
-### Manual Deployment
+### Other Platforms
 
-```bash
-npm run build
-npm start
-```
+The app is a standard Next.js application and can be deployed on any platform that supports Node.js.
 
-### Environment Variables for Production
+## 🔒 Environment Variables
 
-```env
-OPENAI_API_KEY=your_production_api_key
-NODE_ENV=production
-CRM_WEBHOOK_URL=your_crm_webhook_url (optional)
-```
+| Variable               | Description                      | Required |
+| ---------------------- | -------------------------------- | -------- |
+| `OPENAI_API_KEY`       | Your OpenAI API key              | Yes      |
+| `OPENAI_ASSISTANT_ID`  | Specific assistant ID (optional) | No       |
+| `NEXT_PUBLIC_APP_NAME` | Application name                 | No       |
 
-## 🧪 Development
+## 🎨 UI Components
 
-### Available Scripts
+Built with shadcn/ui components:
 
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-```
+- `Button` - Interactive buttons with variants
+- `Card` - Content containers
+- `Input` - Form inputs
+- `ScrollArea` - Scrollable containers
+- `Badge` - Status indicators
+- `Avatar` - User/bot avatars
 
-### Code Quality
+## 📝 License
 
-- ESLint configuration for Next.js
-- Prettier for code formatting
-- TypeScript ready (use .tsx files)
-
-## 📈 Performance
-
-### Optimization Features
-
-- Next.js App Router for optimal performance
-- Streaming responses for better perceived performance
-- Component lazy loading
-- Image optimization ready
-- Edge runtime compatible
-
-### Monitoring
-
-- Built-in Next.js analytics ready
-- OpenAI usage tracking in API routes
-- Performance Web Vitals tracking
+MIT License - feel free to use this project for learning or commercial purposes.
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## 📞 Support
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+For issues or questions:
 
-## 🆘 Support
-
-### Getting Help
-
-- 📖 Check the documentation above
-- 🐛 Report bugs via GitHub Issues
-- 💬 Ask questions in GitHub Discussions
-- 📧 Contact: your-email@domain.com
-
-### Common Issues
-
-**Chat not working?**
-
-- Verify OpenAI API key is correct
-- Check API quota and billing
-- Ensure environment variables are loaded
-
-**Styling issues?**
-
-- Run `npm run build` to check for CSS conflicts
-- Verify Tailwind CSS configuration
-- Check for shadcn/ui component updates
+1. Check the documentation
+2. Search existing issues
+3. Create a new issue with detailed information
 
 ---
 
-Built with ❤️ for the Forex trading community
-
-**⚠️ Trading Disclaimer**: This chatbot provides educational information only. Always consult with financial professionals and understand the risks before trading.
+**Note**: This is an educational tool. Always verify trading advice with financial professionals and trade responsibly.

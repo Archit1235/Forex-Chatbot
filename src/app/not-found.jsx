@@ -1,7 +1,8 @@
 import Link from 'next/link';
+import { TrendingUp, Home, MessageCircle } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { TrendingUp, Home, MessageCircle } from 'lucide-react';
 
 export default function NotFound() {
   return (
